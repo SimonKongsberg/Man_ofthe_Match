@@ -8,10 +8,15 @@ Made using Xamarin and XAML.forms in Visual Studio 2017
 
 Use Virtual Machine or Xamarin Live Previewer for best repesentation of finished product
 
-Setup for running / customization:
+# Setup for running / customization:
 
-# Download and install the following nuget packages:
+### Download and install the following nuget packages:
 
 #### For both Android and iOS
   Microsoft.Net.Http
+  
   Newtonsoft.Json
+  
+#### For Android
+
+#### For iOS
