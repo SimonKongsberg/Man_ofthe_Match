@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Man_of_the_Match.Droid</RootNamespace>
     <AssemblyName>Man_of_the_Match.Android</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -79,6 +79,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
+
+
   <Import Project="..\Man_of_the_Match\Man_of_the_Match.projitems" Label="Shared" />
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+
+ <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
