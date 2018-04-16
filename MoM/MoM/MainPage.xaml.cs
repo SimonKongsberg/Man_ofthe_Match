@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Man_of_the_Match
+namespace MoM
 {
 	public partial class MainPage : ContentPage
 	{

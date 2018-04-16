@@ -23,9 +23,9 @@
 	<key>MinimumOSVersion</key>
 	<string>10.3</string>
 	<key>CFBundleDisplayName</key>
-	<string>Man_of_the_Match</string>
+	<string>MoM</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.Man_of_the_Match</string>
+	<string>com.yourcompany.MoM</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
@@ -49,6 +49,6 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
-	<string>Man_of_the_Match</string>
+	<string>MoM</string>
 </dict>
 </plist>

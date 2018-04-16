@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace Man_of_the_Match
+namespace MoM
 {
 	public partial class App : Application
 	{
@@ -13,7 +13,7 @@ namespace Man_of_the_Match
 		{
 			InitializeComponent();
 
-			MainPage = new Man_of_the_Match.MainPage();
+			MainPage = new MoM.MainPage();
 		}
 
 		protected override void OnStart ()

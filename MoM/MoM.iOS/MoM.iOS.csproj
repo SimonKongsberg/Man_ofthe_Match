@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A0A3FF48-0494-40B4-958C-39E029439F0B}</ProjectGuid>
+    <ProjectGuid>{31940C3C-DF3F-4DC4-9560-B1572E9A74F8}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Man_of_the_Match.iOS</RootNamespace>
+    <RootNamespace>MoM.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Man_of_the_Match.iOS</AssemblyName>
+    <AssemblyName>MoM.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -119,8 +119,19 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Http">
+      <Version>2.2.29</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\Man_of_the_Match\Man_of_the_Match.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\MoM\MoM.csproj">
+      <Project>{1C09A616-3E77-4276-B2BC-EA5395B639DC}</Project>
+      <Name>MoM</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

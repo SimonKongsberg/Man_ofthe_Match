@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Man_of_the_Match.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("MoM.Droid.Resource", IsApplication=true)]
 
-namespace Man_of_the_Match.Droid
+namespace MoM.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace Man_of_the_Match.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Man_of_the_Match.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MoM.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

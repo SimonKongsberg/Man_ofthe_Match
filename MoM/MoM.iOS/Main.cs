@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Man_of_the_Match.iOS
+namespace MoM.iOS
 {
     public class Application
     {
