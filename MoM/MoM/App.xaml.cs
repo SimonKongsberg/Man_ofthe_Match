@@ -13,8 +13,8 @@ namespace MoM
 		{
 			InitializeComponent();
 
-			MainPage = new MoM.MainPage();
-		}
+            MainPage = new NavigationPage(new MainPage());
+        }
 
 		protected override void OnStart ()
 		{

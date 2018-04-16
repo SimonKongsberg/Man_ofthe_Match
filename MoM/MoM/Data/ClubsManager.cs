@@ -9,15 +9,15 @@ namespace MoM.Data
 {
     class ClubsManager
     {
-        const string url = "http://nicolaisolutions.com/myjson.json";
+        const string url = "http://www.nicolaisolutions.com/myjson.json";
         private string accesskey;
 
         private JsonSerializer json = new JsonSerializer();
 
-        private async Task<HttpClient> GetClient()
+        private HttpClient GetClient()
         {
             HttpClient client = new HttpClient();
-            
+            /*
             if (string.IsNullOrEmpty(accesskey))
             {
                 accesskey = await client.GetStringAsync(url + "login");
@@ -25,14 +25,15 @@ namespace MoM.Data
 
             }
             client.DefaultRequestHeaders.Add("Authorization", accesskey);
+            */
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            
+
             return client;
-            
+
         }
         public async Task<IEnumerable<Clubs>> GetAll()
         {
-            HttpClient client = await GetClient();
+            HttpClient client = GetClient();
             string result = await client.GetStringAsync(url);
             return JsonConvert.DeserializeObject<IEnumerable<Clubs>>(result);
         }

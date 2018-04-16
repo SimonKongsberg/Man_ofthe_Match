@@ -4,18 +4,23 @@
              xmlns:local="clr-namespace:MoM"
              x:Class="MoM.MainPage"
              Title="MoM">
-    <Label>Hey</Label>
+    <Label Text="label"/>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
     </ContentPage.ToolbarItems>
 
     <ListView ItemsSource="{Binding}">
+
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Name}">
+                <TextCell Text="{Binding name}" Detail="{Binding cuisine}">
+                    <TextCell.ContextActions>
+                        <MenuItem
+                CommandParameter="{Binding}"
+                Text="Delete" IsDestructive="True" />
+                    </TextCell.ContextActions>
                 </TextCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
 </ContentPage>
