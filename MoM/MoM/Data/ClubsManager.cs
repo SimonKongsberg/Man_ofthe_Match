@@ -4,11 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace MoM.Data
 {
+
     class ClubsManager
     {
+
+        
+
         const string url = "http://www.nicolaisolutions.com/myjson.json";
         private string accesskey;
 
