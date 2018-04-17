@@ -1,15 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoM.Network.NoNetworkPage">
+             x:Class="MoM.Network.NetworkViewPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#f0f0f0">
-            <Label Text="No Network Connection Available"
+        <StackLayout>
+            <Label x:Name="ConnectionDetails" Text="Connection details"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                TextColor="#404040"
-                
-                   />
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
