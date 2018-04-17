@@ -1,0 +1,17 @@
+<!-- FlowListView nuget, gives error when deploying "nuget not in Mono for android profile"-->
+    <!--xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    <ContentPage.Content>
+        <flv:FlowListView FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false"
+	    FlowItemTappedCommand="{Binding ItemTappedCommand}" FlowLastTappedItem="{Binding LastTappedItem}"
+	    FlowItemsSource="{Binding name}" >
+
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <Label HorizontalOptions="Fill" VerticalOptions="Fill" 
+				    XAlign="Center" YAlign="Center" Text="{Binding cuisine}"/>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+
+        </flv:FlowListView>
+    </ContentPage.Content>
+    -->
