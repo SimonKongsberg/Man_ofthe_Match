@@ -17,7 +17,7 @@ namespace MoM
 
             /* MainPage = new NavigationPage(new NoNetworkPage ()); */
             MainPage = CrossConnectivity.Current.IsConnected
-        ? (Page)new NetworkViewPage()
+        ? (Page)new MainPage()
         : new NoNetworkPage();
         }
 
