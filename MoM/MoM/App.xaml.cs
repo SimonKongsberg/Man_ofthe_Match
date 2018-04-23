@@ -19,6 +19,7 @@ namespace MoM
            /* MainPage = CrossConnectivity.Current.IsConnected
         ? (Page)new MainPage()
         : new NoNetworkPage();*/
+
         }
 
 		protected override void OnStart ()

@@ -7,6 +7,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
     </ContentPage.ToolbarItems>
+  
     <ScrollView>
         <ListView ItemsSource="{Binding}" ItemTapped="BtnClub" >
             <ListView.ItemTemplate>
@@ -20,5 +21,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
     </ScrollView>
 </ContentPage>
