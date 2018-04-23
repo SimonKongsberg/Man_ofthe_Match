@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+
 namespace MoM
 {
 	public partial class MainPage : ContentPage
@@ -18,6 +19,20 @@ namespace MoM
         {
             BindingContext = clubs;
             InitializeComponent();
+
+            
+        }
+
+        async void BtnClub(object sender, ItemTappedEventArgs e)
+        {
+            var ClubItem = (Clubs)e.Item;
+
+            var clubpage = new ClubPage
+            {
+                BindingContext = ClubItem
+            };
+            await Navigation.PushAsync(clubpage);
+
         }
 
         async void OnRefresh(object sender, EventArgs e)
