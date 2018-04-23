@@ -15,26 +15,27 @@ namespace MoM
 		{
 			InitializeComponent();
 
-            /* MainPage = new NavigationPage(new NoNetworkPage ()); */
-            MainPage = CrossConnectivity.Current.IsConnected
+           MainPage = new NavigationPage(new MoM.MainPage());
+           /* MainPage = CrossConnectivity.Current.IsConnected
         ? (Page)new MainPage()
-        : new NoNetworkPage();
+        : new NoNetworkPage();*/
+
         }
 
 		protected override void OnStart ()
 		{
             // Handle when your app starts
             base.OnStart();
-            CrossConnectivity.Current.ConnectivityChanged += HandleConnectivityChanged;
+           /* CrossConnectivity.Current.ConnectivityChanged += HandleConnectivityChanged;
 
             void HandleConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
             {
                 Type currentPage = this.MainPage.GetType();
-                if (e.IsConnected && currentPage != typeof(NetworkViewPage))
-                    this.MainPage = new NetworkViewPage();
+                if (e.IsConnected && currentPage != typeof(MainPage))
+                    this.MainPage = new MainPage();
                 else if (!e.IsConnected && currentPage != typeof(NoNetworkPage))
                     this.MainPage = new NoNetworkPage();
-            }
+            } */
         }
 
 		protected override void OnSleep ()

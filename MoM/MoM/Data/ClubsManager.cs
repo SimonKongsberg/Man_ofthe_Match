@@ -13,8 +13,6 @@ namespace MoM.Data
     class ClubsManager
     {
 
-        
-
         const string url = "http://www.nicolaisolutions.com/myjson.json";
         private string accesskey;
 

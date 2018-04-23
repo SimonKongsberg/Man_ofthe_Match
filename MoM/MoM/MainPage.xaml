@@ -5,34 +5,22 @@
              x:Class="MoM.MainPage"
              Title="MoM">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Menu" Icon="ic_autorenew.png"/>
         <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
     </ContentPage.ToolbarItems>
-
-    <ListView ItemsSource="{Binding}">
-
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding name}" Detail="{Binding cuisine}">
-                    <TextCell.ContextActions>
-                        <MenuItem
-                CommandParameter="{Binding}"
-                Text="Delete" IsDestructive="True" />
-                    </TextCell.ContextActions>
-                </TextCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+  
     <ScrollView>
-        <StackLayout Orientation="Vertical">
-            <StackLayout Orientation="Horizontal" HeightRequest="175">
-                <ListView BackgroundColor="HotPink"></ListView>
-                <ListView BackgroundColor="Orange"></ListView>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" HeightRequest="175">
-                <ListView BackgroundColor="HotPink"></ListView>
-                <ListView BackgroundColor="Transparent"></ListView>
-            </StackLayout>
-        </StackLayout>
+        <ListView ItemsSource="{Binding}" ItemTapped="BtnClub" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="Blue" Orientation="Vertical">
+                            <Label Text="{Binding name}"/>
+                            <Label Text="{Binding cuisine}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </ScrollView>
 </ContentPage>
