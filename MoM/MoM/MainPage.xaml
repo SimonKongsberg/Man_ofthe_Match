@@ -8,16 +8,35 @@
         <ToolbarItem Text="Add" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
         <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
     </ContentPage.ToolbarItems>
-  
-    <ScrollView>
+
+    <ScrollView Padding="5,5,5,5">
         <ListView ItemsSource="{Binding}" ItemTapped="BtnClub" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout BackgroundColor="{StaticResource navcolor}" Orientation="Vertical">
-                            <Label Text="{Binding name}"/>
-                            <Label Text="{Binding cuisine}"/>
-                        </StackLayout>
+                    <ViewCell Height="400">
+                        <!--BackgroundColor="{StaticResource navcolor}"-->
+                        <RelativeLayout>
+                            <Image Source="Asset8" x:Name="redBox"
+                                                           RelativeLayout.YConstraint="{ConstraintExpression 
+                                        Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
+                                   RelativeLayout.WidthConstraint="{ConstraintExpression
+                                          Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                                   RelativeLayout.HeightConstraint="{ConstraintExpression
+                                             Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}" 
+                                   />
+                            <Label Text="{Binding Name}"
+                                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=redBox,Property=Y,Factor=1,Constant=15}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=redBox,Property=X,Factor=1,Constant=130}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=.5,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
+                                   />
+                            <Label Text="{Binding Cuisine}" HorizontalOptions="Center"/>
+
+                        </RelativeLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

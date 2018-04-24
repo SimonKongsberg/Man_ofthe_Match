@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MoM.Data
 {
-    class Clubs
+    public class Clubs
     {
         public string Name { get; set; }
         public string Cuisine { get; set; }

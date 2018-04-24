@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 namespace MoM.Data
 {
 
-    class ClubsManager
+    public class ClubsManager
     {
 
         const string url = "http://www.nicolaisolutions.com/myjson.json";

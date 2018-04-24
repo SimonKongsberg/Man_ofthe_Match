@@ -12,32 +12,32 @@ namespace MoM
 	public class AddEditClub : ContentPage
 	{
 
-        readonly Clubs existingBook;
+        readonly Clubs existingclub;
         readonly EntryCell nameCell, cuisineCell;
         readonly IList<Clubs> clubs;
         readonly ClubsManager manager;
 
-        public AddEditClub(ClubsManager manager, IList<Clubs> clubs, Clubs existingBook = null)
+        public AddEditClub(ClubsManager manager, IList<Clubs> clubs, Clubs existingclub = null)
             {
                 this.manager = manager;
                 this.clubs = clubs;
-                this.existingBook = existingBook;
+                this.existingclub = existingclub;
 
                 var tableView = new TableView
                 {
                     Intent = TableIntent.Form,
-                    Root = new TableRoot(existingBook != null ? "Edit Club" : "New Club") {
+                    Root = new TableRoot(existingclub != null ? "Edit Club" : "New Club") {
                     new TableSection("Details") {
 
                         (nameCell = new EntryCell {
-                            Label = "Title",
-                            Placeholder = "add title",
-                            Text = (existingBook != null) ? existingBook.Name : null,
+                            Label = "Name",
+                            Placeholder = "add name",
+                            Text = (existingclub != null) ? existingclub.Name : null,
                         }),
                         (cuisineCell = new EntryCell {
-                            Label = "Genre",
-                            Placeholder = "add genre",
-                            Text = (existingBook != null) ? existingBook.Cuisine : null,
+                            Label = "Cuisine",
+                            Placeholder = "add cuisine",
+                            Text = (existingclub != null) ? existingclub.Cuisine : null,
                         }),
                     },
                 }
@@ -45,9 +45,9 @@ namespace MoM
 
                 Button button = new Button()
                 {
-                    BackgroundColor = existingBook != null ? Color.Gray : Color.Green,
+                    BackgroundColor = existingclub != null ? Color.Gray : Color.Green,
                     TextColor = Color.White,
-                    Text = existingBook != null ? "Finished" : "Add Book",
+                    Text = existingclub != null ? "Finished" : "Add Club",
                     CornerRadius = 0,
                 };
                 button.Clicked += OnDismiss;
@@ -78,15 +78,15 @@ namespace MoM
                 }
                 else
                 {
-                    if (existingBook != null)
+                    if (existingclub != null)
                     {
-                        existingBook.Name = name;
-                        existingBook.Cuisine = cuisine;
+                        existingclub.Name = name;
+                        existingclub.Cuisine = cuisine;
 
-                        await manager.Update(existingBook);
-                        int pos = clubs.IndexOf(existingBook);
+                        await manager.Update(existingclub);
+                        int pos = clubs.IndexOf(existingclub);
                         clubs.RemoveAt(pos);
-                        clubs.Insert(pos, existingBook);
+                        clubs.Insert(pos, existingclub);
                     }
                     else
                     {
