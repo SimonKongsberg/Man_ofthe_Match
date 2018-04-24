@@ -15,10 +15,14 @@ namespace MoM
 		{
 			InitializeComponent();
 
-           MainPage = new NavigationPage(new MoM.MainPage());
-           /* MainPage = CrossConnectivity.Current.IsConnected
-        ? (Page)new MainPage()
-        : new NoNetworkPage();*/
+            MainPage = new NavigationPage(new MoM.MainPage())
+            {
+                /* MainPage = CrossConnectivity.Current.IsConnected
+             ? (Page)new MainPage()
+             : new NoNetworkPage();*/
+
+                BarBackgroundColor = Color.Red
+            };
 
         }
 

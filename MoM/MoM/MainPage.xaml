@@ -13,7 +13,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout BackgroundColor="Blue" Orientation="Vertical">
+                        <StackLayout BackgroundColor="{StaticResource navcolor}" Orientation="Vertical">
                             <Label Text="{Binding name}"/>
                             <Label Text="{Binding cuisine}"/>
                         </StackLayout>
@@ -21,6 +21,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
     </ScrollView>
 </ContentPage>
