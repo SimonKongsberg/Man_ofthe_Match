@@ -6,8 +6,8 @@ namespace MoM.Data
 {
     class Clubs
     {
-        public string name { get; set; }
-        public string cuisine { get; set; }
+        public string Name { get; set; }
+        public string Cuisine { get; set; }
 
     }
 }

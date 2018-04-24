@@ -43,7 +43,7 @@ namespace MoM
             {
                 foreach (Clubs club in bookCollection)
                 {
-                    if (clubs.All(b => b.name != club.name))
+                    if (clubs.All(b => b.Name != club.Name))
                         clubs.Add(club);
                 }
             }

@@ -19,6 +19,9 @@ namespace MoM
             
         }
 
-
-	}
+        async void OnNavigateButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+    }
 }
