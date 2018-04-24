@@ -41,5 +41,35 @@ namespace MoM.Data
             string result = await client.GetStringAsync(url);
             return JsonConvert.DeserializeObject<IEnumerable<Clubs>>(result);
         }
+
+        public async Task<Clubs> Add(string name, string cuisine)
+        {
+            // TODO: use POST to add a book
+            Clubs club = new Clubs()
+            {
+                Name = name,
+                Cuisine = cuisine,
+                PublishDate = DateTime.Now.Date,
+            };
+
+            HttpClient client = GetClient();
+            var response = await client.PostAsync(url,
+                new StringContent(
+                    JsonConvert.SerializeObject(club),
+                    Encoding.UTF8, "application/json"));
+
+            return JsonConvert.DeserializeObject<Clubs>(
+                await response.Content.ReadAsStringAsync());
+        }
+
+        public async Task Update(Clubs club)
+        {
+            // TODO: use PUT to update a book
+            HttpClient client = GetClient();
+            await client.PutAsync(url + "/" + club.Name,
+                new StringContent(
+                    JsonConvert.SerializeObject(club),
+                    Encoding.UTF8, "application/json"));
+        }
     }
 }

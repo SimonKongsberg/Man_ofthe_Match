@@ -8,6 +8,7 @@ namespace MoM.Data
     {
         public string Name { get; set; }
         public string Cuisine { get; set; }
+        public DateTime PublishDate { get; set; }
 
     }
 }

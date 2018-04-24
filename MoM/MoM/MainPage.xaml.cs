@@ -52,5 +52,17 @@ namespace MoM
                 this.IsBusy = false;
             }
         }
+
+        async void OnAddNewClub(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(
+                new AddEditClub(manager, clubs));
+        }
+
+        async void OnEditClub(object sender, ItemTappedEventArgs e)
+        {
+            await Navigation.PushModalAsync(
+                new AddEditClub(manager, clubs, (Clubs)e.Item));
+        }
     }
 }
