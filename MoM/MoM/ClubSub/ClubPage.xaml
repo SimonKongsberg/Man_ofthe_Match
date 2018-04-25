@@ -4,12 +4,52 @@
              x:Class="MoM.ClubPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding Name}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Cuisine}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
+                <RelativeLayout>
+                <Image Source="Asset8" x:Name="redBox"
+                                   
+            RelativeLayout.YConstraint="{ConstraintExpression 
+                    Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}" 
+            />
+                <Label Text="{Binding Name}"
+                                   
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                    ElementName=redBox,Property=Y,Factor=1,Constant=15}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                    ElementName=redBox,Property=X,Factor=1,Constant=130}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,Property=Width,Factor=.5,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
+            />
+                <Label Text="{Binding Cuisine}" HorizontalOptions="Center"
+                            
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                    ElementName=redBox,Property=Y,Factor=1,Constant=30}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                    ElementName=redBox,Property=X,Factor=1,Constant=62}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,Property=Width,Factor=.5,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
+                                   
+            />
+                </RelativeLayout>
+            </Frame>
+            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
+            <Label Text="Division" HorizontalOptions="Center"/>
+            </Frame>
+            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
+                <Label Text="Kommende kampe" HorizontalOptions="Center"/>
+            </Frame>
+            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
+                <Label Text="Kommende kampe (How to make dropdown)" HorizontalOptions="Center"/>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
