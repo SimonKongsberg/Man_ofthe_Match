@@ -1,9 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MoM"
              x:Class="MoM.ClubPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar x:Name="SearchBar" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
+                <SearchBar.Behaviors>
+                    <!--<local:TextChangedBehavior />-->
+                </SearchBar.Behaviors>
+            </SearchBar>
             <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
                 <RelativeLayout>
                 <Image Source="Asset8" x:Name="redBox"
@@ -48,6 +59,17 @@
             </Frame>
             <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
                 <Label Text="Kommende kampe (How to make dropdown)" HorizontalOptions="Center"/>
+                <ListView ItemsSource="{Binding}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <RelativeLayout>
+                                    <Label Text="{Binding Name}"/>
+                                </RelativeLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Frame>
 
         </StackLayout>
