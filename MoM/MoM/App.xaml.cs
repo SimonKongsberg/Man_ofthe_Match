@@ -14,6 +14,7 @@ namespace MoM
 		public App ()
 		{
 			InitializeComponent();
+            FlowListView.Init();
 
             MainPage = new NavigationPage(new MoM.MainPage())
             {
@@ -30,6 +31,7 @@ namespace MoM
 		{
             // Handle when your app starts
             base.OnStart();
+
            /* CrossConnectivity.Current.ConnectivityChanged += HandleConnectivityChanged;
 
             void HandleConnectivityChanged(object sender, ConnectivityChangedEventArgs e)

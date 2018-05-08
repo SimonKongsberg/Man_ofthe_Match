@@ -58,8 +58,8 @@
                 <Label Text="Kommende kampe" HorizontalOptions="Center"/>
             </Frame>
             <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
-                <Label Text="Kommende kampe (How to make dropdown)" HorizontalOptions="Center"/>
-                <ListView ItemsSource="{Binding}">
+                <Label Text="Kommende kampe" HorizontalOptions="Center"/>
+                <ListView ItemsSource="{Binding}" ItemTapped="BtnPlayerPage">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

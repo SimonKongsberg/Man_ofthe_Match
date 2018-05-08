@@ -47,6 +47,18 @@ namespace MoM
             }
         }
 
+        async void BtnPlayerPage(object sender, ItemTappedEventArgs e)
+        {
+            var ClubItem = (Clubs)e.Item;
+
+            var clubpage = new PlayerPage
+            {
+                BindingContext = ClubItem
+            };
+            await Navigation.PushAsync(clubpage);
+
+        }
+
         // Searchbar start
 
         private ICommand _searchCommand;

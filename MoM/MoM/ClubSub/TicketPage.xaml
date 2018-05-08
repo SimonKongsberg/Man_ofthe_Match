@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoM.PlayerPage">
+             x:Class="MoM.ClubSub.TicketPage">
     <ContentPage.Content>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -12,13 +12,12 @@
                 <RowDefinition Height="AUTO"/>
             </Grid.RowDefinitions>
             <BoxView HeightRequest="200" WidthRequest="200" Grid.Column="0" Grid.Row="0"/>
-            <StackLayout BackgroundColor="blue" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" >
+            <StackLayout BackgroundColor="grey" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" >
+                <Label Text="You have voted on"/>
                 <Label Text="Nicolai Simonsen"/>
-                <Label Text="OB Club"/>
-                <Label Text="Fodbold"/>
-                <button onClick="BtnTicket"></button>
+                <Label Text="Team 1 Vs Team 2"/>
+                <Label Text="16/5/2018 - Kl: 10:00"/>
             </StackLayout>
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>
