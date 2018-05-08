@@ -7,7 +7,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <StackLayout>
             <SearchBar x:Name="SearchBar" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
@@ -57,8 +57,9 @@
             <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
                 <Label Text="Kommende kampe" HorizontalOptions="Center"/>
             </Frame>
-            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
-                <Label Text="Kommende kampe (How to make dropdown)" HorizontalOptions="Center"/>
+
+            <Button Text="Afsluttede Kampe" Clicked="OnButtonClicked"/>
+            <Frame x:Name="AfKa" OutlineColor="Black" HasShadow="True" Margin="5,5,5,5" IsVisible="False">
                 <ListView ItemsSource="{Binding}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -71,7 +72,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Frame>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

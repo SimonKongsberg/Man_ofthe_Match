@@ -82,5 +82,13 @@ namespace MoM
         }
         // Searchbar end
 
+
+        // "Dropdown"
+        void OnButtonClicked(object sender, EventArgs e)
+        {
+            AfKa.IsVisible = !AfKa.IsVisible;
+        }
+        
+
     }
 }
