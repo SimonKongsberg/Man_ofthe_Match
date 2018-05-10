@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using DLToolkit.Forms.Controls;
+using DLToolkit.Forms;
 
 namespace MoM
 {
@@ -17,6 +18,7 @@ namespace MoM
 
         public MainPage()
         {
+            ClubXamlList.FlowItemsSource = clubs;
             BindingContext = clubs;
             InitializeComponent();
 
@@ -33,6 +35,25 @@ namespace MoM
             };
             await Navigation.PushAsync(clubpage);
 
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            this.IsBusy = true;
+            var bookCollection = await manager.GetAll();
+            try
+            {
+                foreach (Clubs club in bookCollection)
+                {
+                    if (clubs.All(b => b.Name != club.Name))
+                        clubs.Add(club);
+                }
+            }
+            finally
+            {
+                this.IsBusy = false;
+            }
         }
 
         async void OnRefresh(object sender, EventArgs e)

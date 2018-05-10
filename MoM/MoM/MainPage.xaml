@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MoM"
              x:Class="MoM.MainPage"
-             Title="MoM">
+             Title="MoM"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
         <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
@@ -13,20 +14,20 @@
         <StackLayout>
             <StackLayout>
                 <Grid Padding="10, 0, 10, 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition Height="15"/>
-                </Grid.RowDefinitions>
-                <Image Source="OBicon" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="VS" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                <Label Text="KL 14:00 - 15:30" Grid.Column="1" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Image Source="OBicon" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="15"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="OBicon" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="VS" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="KL 14:00 - 15:30" Grid.Column="1" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Image Source="OBicon" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
                 <Grid Padding="10, 0, 10, 0">
                     <Grid.ColumnDefinitions>
@@ -45,13 +46,23 @@
                     <Image Source="OBicon" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
             </StackLayout>
-            <ListView ItemsSource="{Binding}" ItemTapped="BtnClub" RowHeight="175">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell Height="400">
-                        <!--BackgroundColor="{StaticResource navcolor}"-->
-                        <RelativeLayout>
-                            <Image Source="Asset8" x:Name="redBox"
+            <flv:FlowListView x:Name="ClubXamlList" FlowColumnCount="4" SeparatorVisibility="None" HasUnevenRows="False" RowHeight="80" FlowUseAbsoluteLayoutInternally="false" FlowItemTapped="BtnClub" IsGroupingEnabled="true" FlowGroupDisplayBinding="{Binding}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="400">
+                            <!--BackgroundColor="{StaticResource navcolor}"-->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <RelativeLayout Grid.Column="0" Grid.Row="0">
+                                    <Image Source="Asset8" x:Name="redBox"
                                    
                             RelativeLayout.YConstraint="{ConstraintExpression 
                                     Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
@@ -60,7 +71,7 @@
                             RelativeLayout.HeightConstraint="{ConstraintExpression
                                     Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}" 
                             />
-                            <Label TextColor="White" Text="{Binding Name}"
+                                    <Label TextColor="White" Text="{Binding Name}"
                                    
                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                                     ElementName=redBox,Property=Y,Factor=1,Constant=15}"
@@ -71,7 +82,7 @@
                                 RelativeLayout.HeightConstraint="{ConstraintExpression
                                     Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
                             />
-                            <Label TextColor="White" Text="{Binding Cuisine}" HorizontalOptions="Center"
+                                    <Label TextColor="White" Text="{Binding Cuisine}" HorizontalOptions="Center"
                             
                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                                     ElementName=redBox,Property=Y,Factor=1,Constant=30}"
@@ -84,11 +95,14 @@
                                    
                             />
 
-                        </RelativeLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                                </RelativeLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+            </flv:FlowListView>
+        </StackLayout>
     </ScrollView>
+
+
 </ContentPage>
