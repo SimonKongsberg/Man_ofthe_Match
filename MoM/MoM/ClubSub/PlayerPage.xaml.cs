@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MoM.ClubSub;
 using MoM.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

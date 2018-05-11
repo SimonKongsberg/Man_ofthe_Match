@@ -96,7 +96,17 @@ namespace MoM
 
 
         // "Dropdown"
-        void OnButtonClicked(object sender, EventArgs e)
+        void DiviButtonClicked(object sender, EventArgs e)
+        {
+            Divi.IsVisible = !Divi.IsVisible;
+        }
+
+        void KomKaButtonClicked(object sender, EventArgs e)
+        {
+            KomKa.IsVisible = !KomKa.IsVisible;
+        }
+
+        void AfKaButtonClicked(object sender, EventArgs e)
         {
             AfKa.IsVisible = !AfKa.IsVisible;
         }

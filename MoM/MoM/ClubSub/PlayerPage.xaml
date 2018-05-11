@@ -12,11 +12,11 @@
                 <RowDefinition Height="AUTO"/>
             </Grid.RowDefinitions>
             <BoxView HeightRequest="200" WidthRequest="200" Grid.Column="0" Grid.Row="0"/>
-            <StackLayout BackgroundColor="blue" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" >
+            <StackLayout BackgroundColor="Blue" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" >
                 <Label Text="Nicolai Simonsen"/>
                 <Label Text="OB Club"/>
                 <Label Text="Fodbold"/>
-                <button onClick="BtnTicket"></button>
+                <Button Clicked="BtnTicket"></Button>
             </StackLayout>
         </Grid>
 

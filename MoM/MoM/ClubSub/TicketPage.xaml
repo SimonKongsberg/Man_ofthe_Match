@@ -12,7 +12,7 @@
                 <RowDefinition Height="AUTO"/>
             </Grid.RowDefinitions>
             <BoxView HeightRequest="200" WidthRequest="200" Grid.Column="0" Grid.Row="0"/>
-            <StackLayout BackgroundColor="grey" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" >
+            <StackLayout BackgroundColor="Gray" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" >
                 <Label Text="You have voted on"/>
                 <Label Text="Nicolai Simonsen"/>
                 <Label Text="Team 1 Vs Team 2"/>

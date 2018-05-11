@@ -6,6 +6,7 @@ using MoM.Network;
 using Xamarin.Forms;
 using Plugin.Connectivity.Abstractions;
 using Plugin.Connectivity;
+using DLToolkit.Forms.Controls;
 
 namespace MoM
 {

@@ -3,29 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MoM"
              x:Class="MoM.ClubPage">
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
     </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
-        <StackLayout>
-            <SearchBar x:Name="SearchBar" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
-                <SearchBar.Behaviors>
-                </SearchBar.Behaviors>
-            </SearchBar>
-            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
-                <RelativeLayout>
-                <Image Source="Asset8" x:Name="redBox"
+        <ScrollView>
+            <StackLayout>
+                <SearchBar x:Name="SearchBar" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
+                    <SearchBar.Behaviors>
+                    </SearchBar.Behaviors>
+                </SearchBar>
+                <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
+                    <RelativeLayout>
+                        <Image Source="Asset8" x:Name="redBox"
                                    
-            RelativeLayout.YConstraint="{ConstraintExpression 
-                    Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression
-                    Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression
-                    Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}" 
-            />
-                <Label Text="{Binding Name}"
+                            RelativeLayout.YConstraint="{ConstraintExpression 
+                                    Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression
+                                    Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression
+                                    Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}" 
+                        />
+                        <Label Text="{Binding Name}"
                                    
                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                     ElementName=redBox,Property=Y,Factor=1,Constant=15}"
@@ -36,7 +36,7 @@
                 RelativeLayout.HeightConstraint="{ConstraintExpression
                     Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
             />
-                <Label Text="{Binding Cuisine}" HorizontalOptions="Center"
+                        <Label Text="{Binding Cuisine}" HorizontalOptions="Center"
                             
                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                     ElementName=redBox,Property=Y,Factor=1,Constant=30}"
@@ -48,35 +48,53 @@
                     Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
                                    
             />
-                </RelativeLayout>
-            </Frame>
-            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
-            <Label Text="Division" HorizontalOptions="Center"/>
-            </Frame>
-            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
-                <Label Text="Kommende kampe" HorizontalOptions="Center"/>
-            </Frame>
-<<<<<<< HEAD
+                    </RelativeLayout>
+                </Frame>
+                <Button Text="Division" Clicked="DiviButtonClicked" BackgroundColor="White" TextColor="Gray" FontFamily="Roboto-Regular" HeightRequest="75"/>
+                <Frame x:Name="Divi" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="5,-11,5,5">
+                    <ListView ItemsSource="{Binding}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <RelativeLayout>
+                                        <Label Text="{Binding Name}"/>
+                                    </RelativeLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
 
-            <Button Text="Afsluttede Kampe" Clicked="OnButtonClicked"/>
-            <Frame x:Name="AfKa" OutlineColor="Black" HasShadow="True" Margin="5,5,5,5" IsVisible="False">
-                <ListView ItemsSource="{Binding}">
-=======
-            <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
-                <Label Text="Kommende kampe" HorizontalOptions="Center"/>
-                <ListView ItemsSource="{Binding}" ItemTapped="BtnPlayerPage">
->>>>>>> ded552b14e0f6fc1e31ad5da0534b714bb36d322
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <RelativeLayout>
-                                    <Label Text="{Binding Name}"/>
-                                </RelativeLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Frame>
-        </StackLayout>
+                <Button Text="Kommende Kampe" Clicked="KomKaButtonClicked" BackgroundColor="White" TextColor="Gray" FontFamily="Roboto-Regular" HeightRequest="75"/>
+                <Frame x:Name="KomKa" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="5,-11,5,5">
+                    <ListView ItemsSource="{Binding}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <RelativeLayout>
+                                        <Label Text="{Binding Name}"/>
+                                    </RelativeLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+                <Button Text="Afsluttede Kampe" Clicked="AfKaButtonClicked" BackgroundColor="White" TextColor="Gray" FontFamily="Roboto-Regular" HeightRequest="75"/>
+                <Frame x:Name="AfKa" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="5,-11,5,5">
+                    <ListView ItemsSource="{Binding}" ItemTapped="BtnPlayerPage">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <RelativeLayout>
+                                        <Label Text="{Binding Name}"/>
+                                    </RelativeLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
