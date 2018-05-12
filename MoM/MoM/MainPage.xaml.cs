@@ -18,7 +18,7 @@ namespace MoM
 
         public MainPage()
         {
-            ClubXamlList.FlowItemsSource = clubs;
+            //ClubXamlList.FlowItemsSource = clubs;
             BindingContext = clubs;
             InitializeComponent();
 
@@ -37,24 +37,24 @@ namespace MoM
 
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            this.IsBusy = true;
-            var bookCollection = await manager.GetAll();
-            try
-            {
-                foreach (Clubs club in bookCollection)
-                {
-                    if (clubs.All(b => b.Name != club.Name))
-                        clubs.Add(club);
-                }
-            }
-            finally
-            {
-                this.IsBusy = false;
-            }
-        }
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    this.IsBusy = true;
+        //    var bookCollection = await manager.GetAll();
+        //    try
+        //    {
+        //        foreach (Clubs club in bookCollection)
+        //        {
+        //            if (clubs.All(b => b.Name != club.Name))
+        //                clubs.Add(club);
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        this.IsBusy = false;
+        //    }
+        //}
 
         async void OnRefresh(object sender, EventArgs e)
         {
@@ -85,5 +85,11 @@ namespace MoM
             await Navigation.PushModalAsync(
                 new AddEditClub(manager, clubs, (Clubs)e.Item));
         }
+
+        void HoMenButtonClicked(object sender, EventArgs e)
+        {
+            HoMen.IsVisible = !HoMen.IsVisible;
+        }
+
     }
 }
