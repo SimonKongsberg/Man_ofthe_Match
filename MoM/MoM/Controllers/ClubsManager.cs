@@ -49,7 +49,6 @@ namespace MoM.Data
             {
                 Name = name,
                 Description = description,
-                PublishDate = DateTime.Now.Date,
             };
 
             HttpClient client = GetClient();

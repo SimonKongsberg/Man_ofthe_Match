@@ -13,7 +13,7 @@ namespace MoM
 	{
 
         readonly Clubs existingclub;
-        readonly EntryCell nameCell, cuisineCell;
+        readonly EntryCell nameCell, descriptionCell;
         readonly IList<Clubs> clubs;
         readonly ClubsManager manager;
 
@@ -34,10 +34,10 @@ namespace MoM
                             Placeholder = "add name",
                             Text = (existingclub != null) ? existingclub.Name : null,
                         }),
-                        (cuisineCell = new EntryCell {
+                        (descriptionCell = new EntryCell {
                             Label = "Cuisine",
-                            Placeholder = "add cuisine",
-                            Text = (existingclub != null) ? existingclub.Cuisine : null,
+                            Placeholder = "add description",
+                            Text = (existingclub != null) ? existingclub.Description : null,
                         }),
                     },
                 }
@@ -66,7 +66,7 @@ namespace MoM
             try
             {
                 string name = nameCell.Text;
-                string cuisine = cuisineCell.Text;
+                string cuisine = descriptionCell.Text;
 
                 if (string.IsNullOrWhiteSpace(name)
                     || string.IsNullOrWhiteSpace(cuisine))
@@ -81,7 +81,7 @@ namespace MoM
                     if (existingclub != null)
                     {
                         existingclub.Name = name;
-                        existingclub.Cuisine = cuisine;
+                        existingclub.Description = cuisine;
 
                         await manager.Update(existingclub);
                         int pos = clubs.IndexOf(existingclub);
