@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MoM
 {
-    class SimpleGalleryPageModel
+    /* class SimpleGalleryPageModel
     {
 
         public class SimpleGalleryPageModel : BasePageModel
@@ -68,5 +68,5 @@ namespace MoM
                 }
             }
         }
-    }
+    } */
 }

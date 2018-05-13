@@ -81,7 +81,7 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <RelativeLayout Grid.Column="0" Grid.Row="0">
-                                    <Image Source="Asset8" x:Name="redBox"
+                                    <Image Source="Asset8" x:Name="redBox" Aspect="AspectFill"
                                    
                             RelativeLayout.YConstraint="{ConstraintExpression 
                                     Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
@@ -119,7 +119,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                </ListView>
+            </ListView>
         </StackLayout>
     </ScrollView>
 
