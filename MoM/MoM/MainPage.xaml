@@ -64,10 +64,10 @@
                     </ListView>
                 </Frame>
             </AbsoluteLayout>
-            
-            <flv:FlowListView x:Name="ClubXamlList" FlowColumnCount="4" SeparatorVisibility="None" HasUnevenRows="False" RowHeight="80" FlowUseAbsoluteLayoutInternally="false" FlowItemTapped="BtnClub" IsGroupingEnabled="true" FlowGroupDisplayBinding="{Binding}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-                <flv:FlowListView.FlowColumnTemplate>
+            <ListView ItemsSource="{Binding}" RowHeight="175">
+
+                <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="400">
                             <!--BackgroundColor="{StaticResource navcolor}"-->
@@ -118,8 +118,8 @@
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
-                </flv:FlowListView.FlowColumnTemplate>
-            </flv:FlowListView>
+                </ListView.ItemTemplate>
+                </ListView>
         </StackLayout>
     </ScrollView>
 
