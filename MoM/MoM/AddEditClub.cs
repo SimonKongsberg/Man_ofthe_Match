@@ -13,7 +13,7 @@ namespace MoM
 	{
 
         readonly Clubs existingclub;
-        readonly EntryCell nameCell, cuisineCell;
+        readonly EntryCell nameCell, descriptionCell;
         readonly IList<Clubs> clubs;
         readonly ClubsManager manager;
 
@@ -34,9 +34,13 @@ namespace MoM
                             Placeholder = "add name",
                             Text = (existingclub != null) ? existingclub.Name : null,
                         }),
-                        (cuisineCell = new EntryCell {
+                        (descriptionCell = new EntryCell {
                             Label = "Cuisine",
+<<<<<<< HEAD
                             Placeholder = "add cuisine",
+=======
+                            Placeholder = "add description",
+>>>>>>> b5a71f21a229756c44f9973317c14a451e007a01
                             Text = (existingclub != null) ? existingclub.Description : null,
                         }),
                     },
@@ -66,7 +70,7 @@ namespace MoM
             try
             {
                 string name = nameCell.Text;
-                string cuisine = cuisineCell.Text;
+                string cuisine = descriptionCell.Text;
 
                 if (string.IsNullOrWhiteSpace(name)
                     || string.IsNullOrWhiteSpace(cuisine))
