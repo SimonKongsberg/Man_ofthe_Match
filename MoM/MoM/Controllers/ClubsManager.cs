@@ -13,7 +13,7 @@ namespace MoM.Data
     public class ClubsManager
     {
 
-        const string url = "http://www.nicolaisolutions.com/myjson.json";
+        const string url = "http://localhost:64311/umbraco/api/clubs/GetAllClubs?id=1071";
         private string accesskey;
 
         private JsonSerializer json = new JsonSerializer();
@@ -42,13 +42,13 @@ namespace MoM.Data
             return JsonConvert.DeserializeObject<IEnumerable<Clubs>>(result);
         }
 
-        public async Task<Clubs> Add(string name, string cuisine)
+        public async Task<Clubs> Add(string name, string description)
         {
             // TODO: use POST to add a book
             Clubs club = new Clubs()
             {
                 Name = name,
-                Cuisine = cuisine,
+                Description = description,
                 PublishDate = DateTime.Now.Date,
             };
 

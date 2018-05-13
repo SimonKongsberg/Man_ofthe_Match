@@ -101,7 +101,7 @@
                                 RelativeLayout.HeightConstraint="{ConstraintExpression
                                     Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
                             />
-                                    <Label TextColor="White" Text="{Binding Cuisine}" HorizontalOptions="Center"
+                                    <Label TextColor="White" Text="{Binding Description}" HorizontalOptions="Center"
                             
                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                                     ElementName=redBox,Property=Y,Factor=1,Constant=30}"
