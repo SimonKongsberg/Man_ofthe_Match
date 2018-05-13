@@ -37,7 +37,7 @@ namespace MoM
                         (cuisineCell = new EntryCell {
                             Label = "Cuisine",
                             Placeholder = "add cuisine",
-                            Text = (existingclub != null) ? existingclub.Cuisine : null,
+                            Text = (existingclub != null) ? existingclub.Description : null,
                         }),
                     },
                 }
@@ -81,7 +81,7 @@ namespace MoM
                     if (existingclub != null)
                     {
                         existingclub.Name = name;
-                        existingclub.Cuisine = cuisine;
+                        existingclub.Description = cuisine;
 
                         await manager.Update(existingclub);
                         int pos = clubs.IndexOf(existingclub);
