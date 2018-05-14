@@ -16,16 +16,16 @@
                 </SearchBar>
                 <Frame OutlineColor="Black" HasShadow="True" Margin="5,5,5,5">
                     <RelativeLayout>
-                        <Image Source="Asset8" x:Name="redBox"
+                        <Image Source="Asset8" x:Name="redBox" Aspect="AspectFill"
                                    
                             RelativeLayout.YConstraint="{ConstraintExpression 
                                     Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression
                                     Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression
-                                    Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}" 
+                                    Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" 
                         />
-                        <Label Text="{Binding Name}"
+                        <Label Text="{Binding Name}" TextColor="White"
                                    
                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                     ElementName=redBox,Property=Y,Factor=1,Constant=15}"
@@ -67,7 +67,7 @@
 
                 <Button Text="Kommende Kampe" Clicked="KomKaButtonClicked" BackgroundColor="White" TextColor="Gray" FontFamily="Roboto-Regular" HeightRequest="75"/>
                 <Frame x:Name="KomKa" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="5,-11,5,5">
-                    <ListView ItemsSource="{Binding}">
+                    <ListView ItemsSource="{Binding}" ItemTapped="BtnPlayerPage">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

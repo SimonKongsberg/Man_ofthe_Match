@@ -1,23 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoM.ClubSub.TicketPage">
+             x:Class="MoM.ClubSub.TicketPage"
+             BackgroundColor="#f2f2f2">
     <ContentPage.Content>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="AUTO"/>
-            </Grid.RowDefinitions>
-            <BoxView HeightRequest="200" WidthRequest="200" Grid.Column="0" Grid.Row="0"/>
-            <StackLayout BackgroundColor="Gray" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" >
-                <Label Text="You have voted on"/>
-                <Label Text="Nicolai Simonsen"/>
-                <Label Text="Team 1 Vs Team 2"/>
-                <Label Text="16/5/2018 - Kl: 10:00"/>
-            </StackLayout>
-        </Grid>
+        <StackLayout BackgroundColor="White" Padding="10">
+            <Image Source="Avatar" HeightRequest="200" WidthRequest="200"/>
+            <Label Text="You have voted on" HorizontalOptions="Center"/>
+            <Label Text="Nicolai Simonsen" HorizontalOptions="Center"/>
+            <Label Text="Team 1 Vs Team 2" HorizontalOptions="Center" />
+            <Label Text="16/5/2018 - Kl: 10:00" HorizontalOptions="Center" />
+            <Label Text="Dit kviterings nummer:" HorizontalOptions="Center" />
+            <Label Text="76753434124" HorizontalOptions="Center"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
