@@ -35,12 +35,8 @@ namespace MoM
                             Text = (existingclub != null) ? existingclub.Name : null,
                         }),
                         (descriptionCell = new EntryCell {
-                            Label = "Cuisine",
-<<<<<<< HEAD
-                            Placeholder = "add cuisine",
-=======
+                            Label = "Description",
                             Placeholder = "add description",
->>>>>>> b5a71f21a229756c44f9973317c14a451e007a01
                             Text = (existingclub != null) ? existingclub.Description : null,
                         }),
                     },

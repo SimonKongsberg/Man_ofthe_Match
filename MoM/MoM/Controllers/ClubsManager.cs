@@ -13,8 +13,8 @@ namespace MoM.Data
     public class ClubsManager
     {
 
-        const string url = "http://localhost:64311/umbraco/api/clubs/GetAllClubs?id=1071";
-        //const string url = "http://nicolaisolutions.com/myjson.json";
+        //const string url = "http://localhost:64311/umbraco/api/clubs/GetAllClubs?id=1071";
+        const string url = "http://nicolaisolutions.com/myjson.json";
         private string accesskey;
 
         private JsonSerializer json = new JsonSerializer();

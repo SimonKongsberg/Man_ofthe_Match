@@ -17,6 +17,8 @@ namespace MoM
         readonly IList<Clubs> clubsMatches = new ObservableCollection<Clubs>();
         readonly ClubsManager manager = new ClubsManager();
 
+        
+
         public ClubPage ()
 		{
             BindingContext = clubsMatches;
@@ -31,6 +33,25 @@ namespace MoM
 
         async void OnRefresh(object sender, EventArgs e)
         {
+            this.IsBusy = true;
+            var bookCollection = await manager.GetAll();
+            try
+            {
+                foreach (Clubs club in bookCollection)
+                {
+                    if (clubsMatches.All(b => b.Name != club.Name))
+                        clubsMatches.Add(club);
+                }
+            }
+            finally
+            {
+                this.IsBusy = false;
+            }
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
             this.IsBusy = true;
             var bookCollection = await manager.GetAll();
             try
