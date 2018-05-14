@@ -52,7 +52,7 @@
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell Height="500" >
+                        <ViewCell Height="500">
                             <!--BackgroundColor="{StaticResource navcolor}"-->
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -104,8 +104,8 @@
                 </ListView.ItemTemplate>
             </ListView>
                 </ScrollView>
-                <Frame x:Name="HoMen" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="50,-25,0,0" WidthRequest="200">
-                    <ListView ItemsSource="{Binding}" >
+                <Frame x:Name="HoverBtn" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="0,0,27,-33" WidthRequest="200" HeightRequest="500">
+                    <ListView ItemsSource="{Binding}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -117,7 +117,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </Frame>
-                <Button Text="+" Clicked="HoMenButtonClicked" BackgroundColor="White" TextColor="Gray" FontFamily="Roboto-Regular" HorizontalOptions="End" BorderRadius="50"/>
+                <Button Text="+" Clicked="HoverBtnClicked" BackgroundColor="Red" TextColor="White" FontSize="Large" FontAttributes="Bold" FontFamily="Roboto-Regular" HorizontalOptions="End" WidthRequest="50" HeightRequest="55" BorderRadius="30"/>
                 
 
         </StackLayout>
