@@ -114,7 +114,9 @@
                         </StackLayout>
                     </ScrollView>
                 </Frame>
-                <Button Text="+" Clicked="HoverBtnClicked" BackgroundColor="Red" TextColor="White" FontSize="Large" FontAttributes="Bold" FontFamily="Roboto-Regular" HorizontalOptions="End" WidthRequest="50" HeightRequest="55" BorderRadius="30"/>
+                <Button Text="+" Clicked="HoverBtnClicked" BackgroundColor="Red" TextColor="White" 
+                        FontSize="Large" FontAttributes="Bold" FontFamily="Roboto-Regular" 
+                        HorizontalOptions="End" WidthRequest="50" HeightRequest="53" BorderRadius="30"/>
                 
 
         </StackLayout>
