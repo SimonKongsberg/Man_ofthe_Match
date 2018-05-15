@@ -7,7 +7,6 @@
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
-        <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <StackLayout Padding="5,5,5,5">
@@ -104,18 +103,15 @@
                 </ListView.ItemTemplate>
             </ListView>
                 </ScrollView>
-                <Frame x:Name="HoverBtn" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="0,0,27,-33" WidthRequest="200" HeightRequest="500">
-                    <ListView ItemsSource="{Binding}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <RelativeLayout>
-                                        <Label Text="{Binding Name}"/>
-                                    </RelativeLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                <Frame x:Name="HoverBtn" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="0,0,27,-33" WidthRequest="200" MinimumHeightRequest="500">
+                    <ScrollView>
+                    <StackLayout>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                    </StackLayout>
+                    </ScrollView>
                 </Frame>
                 <Button Text="+" Clicked="HoverBtnClicked" BackgroundColor="Red" TextColor="White" FontSize="Large" FontAttributes="Bold" FontFamily="Roboto-Regular" HorizontalOptions="End" WidthRequest="50" HeightRequest="55" BorderRadius="30"/>
                 
