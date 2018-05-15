@@ -8,9 +8,6 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Admin" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
         <!-- <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" /> -->
-=======
-        <ToolbarItem Text="Add" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
->>>>>>> 42afedbc4e29c28e7626dd7cdbfcaa9a86b5c4db
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <StackLayout Padding="5,5,5,5">
@@ -51,23 +48,23 @@
             </StackLayout>
 
                 <ScrollView>
-            <ListView ItemsSource="{Binding}" RowHeight="100" ItemTapped="BtnClub">
+                    <ListView ItemsSource="{Binding}" RowHeight="100" ItemTapped="BtnClub">
 
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell Height="500">
-                            <!--BackgroundColor="{StaticResource navcolor}"-->
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="40"/>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <RelativeLayout Grid.Column="0" Grid.Row="0">
-                                    <Image Source="Asset8" x:Name="redBox" Aspect="AspectFill"
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="500">
+                                    <!--BackgroundColor="{StaticResource navcolor}"-->
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <RelativeLayout Grid.Column="0" Grid.Row="0">
+                                            <Image Source="Asset8" x:Name="redBox" Aspect="AspectFill"
                                    
                             RelativeLayout.YConstraint="{ConstraintExpression 
                                     Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
@@ -76,7 +73,7 @@
                             RelativeLayout.HeightConstraint="{ConstraintExpression
                                     Type=RelativeToParent,Property=Height,Factor=3,Constant=0}" 
                             />
-                                    <Label TextColor="White" Text="{Binding Name}"
+                                            <Label TextColor="White" Text="{Binding Name}"
                                    
                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                                     ElementName=redBox,Property=Y,Factor=1,Constant=15}"
@@ -87,7 +84,7 @@
                                 RelativeLayout.HeightConstraint="{ConstraintExpression
                                     Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" 
                             />
-                                    <Label TextColor="White" Text="{Binding Description}" HorizontalOptions="Center"
+                                            <Label TextColor="White" Text="{Binding Description}" HorizontalOptions="Center"
                             
                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
                                     ElementName=redBox,Property=Y,Factor=1,Constant=30}"
@@ -100,32 +97,22 @@
                                    
                             />
 
-                                </RelativeLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                        </RelativeLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </ScrollView>
-<<<<<<< HEAD
-                <Frame x:Name="HoMen" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="50,-25,0,0" WidthRequest="200">
-
-                    <StackLayout>
-                        <Label Text="Favorites"/>
-                        <Label Text="Refresh"/>
-                        <Label Text="Tickets"/>
-                    </StackLayout>
-=======
                 <Frame x:Name="HoverBtn" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="0,0,27,-33" WidthRequest="200" MinimumHeightRequest="500">
                     <ScrollView>
-                    <StackLayout>
-                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
-                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
-                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
-                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
-                    </StackLayout>
+                        <StackLayout>
+                            <Button Text="Favorites" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                            <Button Text="Tickets" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                            <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                            <Button Text="Admin" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                        </StackLayout>
                     </ScrollView>
->>>>>>> 42afedbc4e29c28e7626dd7cdbfcaa9a86b5c4db
                 </Frame>
                 <Button Text="+" Clicked="HoverBtnClicked" BackgroundColor="Red" TextColor="White" FontSize="Large" FontAttributes="Bold" FontFamily="Roboto-Regular" HorizontalOptions="End" WidthRequest="50" HeightRequest="55" BorderRadius="30"/>
                 
