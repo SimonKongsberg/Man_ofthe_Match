@@ -8,6 +8,9 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Admin" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
         <!-- <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" /> -->
+=======
+        <ToolbarItem Text="Add" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
+>>>>>>> 42afedbc4e29c28e7626dd7cdbfcaa9a86b5c4db
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <StackLayout Padding="5,5,5,5">
@@ -52,7 +55,7 @@
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell Height="500" >
+                        <ViewCell Height="500">
                             <!--BackgroundColor="{StaticResource navcolor}"-->
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -104,6 +107,7 @@
                 </ListView.ItemTemplate>
             </ListView>
                 </ScrollView>
+<<<<<<< HEAD
                 <Frame x:Name="HoMen" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="50,-25,0,0" WidthRequest="200">
 
                     <StackLayout>
@@ -111,8 +115,19 @@
                         <Label Text="Refresh"/>
                         <Label Text="Tickets"/>
                     </StackLayout>
+=======
+                <Frame x:Name="HoverBtn" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="0,0,27,-33" WidthRequest="200" MinimumHeightRequest="500">
+                    <ScrollView>
+                    <StackLayout>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                        <Button Text="Refresh" Clicked="OnRefresh" BackgroundColor="White" TextColor="Gray"/>
+                    </StackLayout>
+                    </ScrollView>
+>>>>>>> 42afedbc4e29c28e7626dd7cdbfcaa9a86b5c4db
                 </Frame>
-                <Button Text="+" Clicked="HoMenButtonClicked" BackgroundColor="White" TextColor="Gray" FontFamily="Roboto-Regular" HorizontalOptions="End" BorderRadius="50"/>
+                <Button Text="+" Clicked="HoverBtnClicked" BackgroundColor="Red" TextColor="White" FontSize="Large" FontAttributes="Bold" FontFamily="Roboto-Regular" HorizontalOptions="End" WidthRequest="50" HeightRequest="55" BorderRadius="30"/>
                 
 
         </StackLayout>

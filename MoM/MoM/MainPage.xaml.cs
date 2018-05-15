@@ -41,10 +41,10 @@ namespace MoM
         {
             base.OnAppearing();
             this.IsBusy = true;
-            var bookCollection = await manager.GetAll();
+            var clubCollection = await manager.GetAll();
             try
             {
-                foreach (Clubs club in bookCollection)
+                foreach (Clubs club in clubCollection)
                 {
                     if (clubs.All(b => b.Name != club.Name))
                         clubs.Add(club);
@@ -59,10 +59,10 @@ namespace MoM
         async void OnRefresh(object sender, EventArgs e)
         {
             this.IsBusy = true;
-            var bookCollection = await manager.GetAll();
+            var clubCollection = await manager.GetAll();
             try
             {
-                foreach (Clubs club in bookCollection)
+                foreach (Clubs club in clubCollection)
                 {
                     if (clubs.All(b => b.Name != club.Name))
                         clubs.Add(club);
@@ -86,9 +86,9 @@ namespace MoM
                 new AddEditClub(manager, clubs, (Clubs)e.Item));
         }
 
-        void HoMenButtonClicked(object sender, EventArgs e)
+        void HoverBtnClicked(object sender, EventArgs e)
         {
-            HoMen.IsVisible = !HoMen.IsVisible;
+            HoverBtn.IsVisible = !HoverBtn.IsVisible;
         }
 
     }
