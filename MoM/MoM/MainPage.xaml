@@ -6,8 +6,8 @@
              Title="MoM"
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
-        <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
+        <ToolbarItem Text="Admin" Icon="ic_action_new.png" Clicked="OnAddNewClub" />
+        <!-- <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" /> -->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <StackLayout Padding="5,5,5,5">
@@ -105,17 +105,12 @@
             </ListView>
                 </ScrollView>
                 <Frame x:Name="HoMen" OutlineColor="Black" HasShadow="True" IsVisible="False" Margin="50,-25,0,0" WidthRequest="200">
-                    <ListView ItemsSource="{Binding}" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <RelativeLayout>
-                                        <Label Text="{Binding Name}"/>
-                                    </RelativeLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+
+                    <StackLayout>
+                        <Label Text="Favorites"/>
+                        <Label Text="Refresh"/>
+                        <Label Text="Tickets"/>
+                    </StackLayout>
                 </Frame>
                 <Button Text="+" Clicked="HoMenButtonClicked" BackgroundColor="White" TextColor="Gray" FontFamily="Roboto-Regular" HorizontalOptions="End" BorderRadius="50"/>
                 
